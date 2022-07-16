@@ -1,0 +1,27 @@
+credentials:
+  usernames:
+    zifeng@neu.edu:
+      name: Zifeng Jiang
+      password: $2b$12$dwJmTAhXnAw9N9ivMbNUqOwvcHlHfYUgvh93vjvtvBLX6f2ckbiNu # To be replaced with hashed password
+    adina@neu.edu:
+      name: Adina Nibijiang
+      password: $2b$12$pe.WeAGozUZrF8Xe9UbSmeTxN4iuCT2UQw1guraMVOT4KmdnEUQhS # To be replaced with hashed password
+    ta@neu.edu:
+      name: Parth
+      password: $2b$12$/6u.8nUp5sbn/kFbeauxtemA27llmNc7nfcycsodCT9P8/vfo7JVC
+    professor@neu.edu:
+      name: Professor
+      password: $2b$12$7uNBuTf2UBLjpZ17tu6MhuazujDpD4xKJfNPxF/5zu5bAJrl9rKuO
+    team2@neu.edu:
+      name: Team2
+      password: $2b$12$pKPSkX3Yx0mg5wT.ql78Q.9OtW2ukYC.PjgHBWoJkg8flYhBsVMFa
+
+
+cookie:
+  expiry_days: 0
+  key: some_signature_key
+  name: some_cookie_name
+preauthorized:
+  emails:
+  - zifeng@neu.edu
+
