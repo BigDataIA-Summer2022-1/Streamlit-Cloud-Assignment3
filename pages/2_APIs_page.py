@@ -1,5 +1,6 @@
-import streamlit as st
 import requests
+import streamlit as st
+from requests_toolbelt.multipart.encoder import MultipartEncoder
 from PIL import Image
 
 st.title('Casting Product Image for Quality Inspection Services')
@@ -12,11 +13,21 @@ if st.session_state["authentication_status"]:
     if uploaded_file is not None:
         width, height = 300, 300
         image = Image.open(uploaded_file).convert('L')
-        img = image.resize((width, height), Image.ANTIALIAS)
         st.image(image, caption = 'Uploaded Image to Greyscale', use_column_width = True)
+
         submit = st.button("Check the Image")
+
         if submit:
-            res = requests.get(f"https://metal-defect-classifier-team-1.herokuapp.com/docs#/default/def_or_ok_def_or_ok__img__get/{img}")
-            st.write(res.json())
+            def process(image, server_url: str):
+                m = MultipartEncoder(fields = {'file': ('filename', image, 'image/jpeg')})
+                r = requests.post(server_url,
+                                data = m,
+                                headers = {'Content-Type': m.content_type},
+                                timeout = 8000)
+
+                return r
+            url = "https://metal-defect-classifier-team-1.herokuapp.com/def_or_ok/"
+            st.write(process(uploaded_file, url).json())
+
 else:
     st.subheader("Please login first!")
