@@ -24,7 +24,7 @@ if st.session_state["authentication_status"]:
                                 data = m,
                                 headers = {'Content-Type': m.content_type},
                                 timeout = 8000)
-
+                m = None
                 return r
             url = "https://metal-defect-classifier-team-1.herokuapp.com/def_or_ok/"
             st.write(process(uploaded_file, url).json())
