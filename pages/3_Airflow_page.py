@@ -12,10 +12,21 @@ if st.session_state["authentication_status"]:
     col2.metric("False Negative", "0")
     col1.metric("False Positive", "1")
     col2.metric("True Positive", "452")
-    cm_img = Image.open('cm.png')
     st.image('cm.png', use_column_width = True)
-    # airflow analysis
-    
 
+    st.write('Classification Report:')
+    st.image('classification.png', use_column_width = True)
+    # airflow analysis
+    st.write("Success? Fail? Still Running?")
+    st.image('airflow1.png', use_column_width = True)
+
+    st.write("The task duration is as follows:")
+    st.image('airflow2.png', use_column_width = True)
+
+    st.write('DAGs Info:')
+    st.image('daginfo.png', use_column_width = True)
+    
+    st.write('Batch Process Log:')
+    st.image('batch.png', use_column_width = True)
 else:
     st.subheader("Please login first!")
