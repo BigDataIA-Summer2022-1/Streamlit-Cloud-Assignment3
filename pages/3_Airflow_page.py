@@ -20,19 +20,19 @@ if st.session_state["authentication_status"]:
 
     with tab1:
         st.header("Success? Fail? Still Running?")
-        st.image('airflow1.png', width=200)
+        st.image('airflow1.png', width = 750)
 
     with tab2:
         st.header("The task duration is as follows:")
-        st.image('airflow2.png', width=200)
+        st.image('airflow2.png', width = 750)
 
     with tab3:
         st.header('DAGs Info:')
-        st.image('daginfo.png', width=200)
+        st.image('daginfo.png', width = 750)
         
     with tab4:
         st.header('Batch Process Log:')
-        st.image("batch.png", width=200)
+        st.image("batch.png", width = 750)
 
 else:
     st.subheader("Please login first!")
